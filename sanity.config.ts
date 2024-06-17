@@ -5,6 +5,7 @@ import {schemaTypes} from './schemaTypes'
 import {structure} from './structure'
 
 const config = defineConfig
+
 ({
   name: 'default',
   title: 'Day one with Sanity',
@@ -23,3 +24,5 @@ const config = defineConfig
     types: schemaTypes,
   },
 })
+
+export default config
