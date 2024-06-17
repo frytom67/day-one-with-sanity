@@ -3,6 +3,7 @@ import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
 import {structure} from './structure'
+import {defaultDocumentNode} from './structure/defaultDocumentNode'
 
 const config = defineConfig
 
@@ -15,7 +16,7 @@ const config = defineConfig
 
   plugins:
   [
-    structureTool({structure}), 
+    structureTool({structure, defaultDocumentNode}), 
     visionTool(),
   ],
 
