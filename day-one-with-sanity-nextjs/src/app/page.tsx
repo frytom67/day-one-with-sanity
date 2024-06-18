@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { SanityDocument } from "next-sanity";
-
 import { sanityFetch } from "@/sanity/client";
+import { groq } from 'next-sanity'
 
-const EVENTS_QUERY = `*[_type == "event"]{_id, name, slug, date}|order(date desc)`;
+const EVENTS_QUERY = groq`*[_type == "event" && defined(slug.current)]{_id, name, slug, date}|order(date desc)`;
 
 export default async function IndexPage() {
   const events = await sanityFetch<SanityDocument[]>({query: EVENTS_QUERY});
