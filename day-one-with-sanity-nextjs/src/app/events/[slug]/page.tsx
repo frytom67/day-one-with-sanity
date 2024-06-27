@@ -11,6 +11,7 @@ const EVENT_QUERY = `*[
     slug.current == $slug
   ][0]{
   ...,
+  "eventType": coalesce(format, eventType),
   headline->,
   venue->
 }`;
