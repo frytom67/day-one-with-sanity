@@ -35,7 +35,16 @@ export const eventType = defineType({
         list: ['in-person', 'virtual'],
         layout: 'radio',
       },
-    }),    
+    }), 
+    defineField({
+      name: 'format',
+      type: 'string',
+      title: 'Event format',
+      options: {
+        list: ['in-person', 'virtual'],
+        layout: 'radio',
+      },
+    }),   
     defineField({
       name: 'date',
       type: 'datetime',
@@ -81,6 +90,7 @@ export const eventType = defineType({
       name: 'tickets',
       type: 'url',
     }),
+   
   ],
   preview: {
     select: {
